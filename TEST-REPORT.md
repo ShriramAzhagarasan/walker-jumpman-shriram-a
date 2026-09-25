@@ -114,8 +114,8 @@ Only if someone else actually played: who, what they did, what they said. Otherw
 - The automated route passes partly because moving taxi 4's `phase` (0.7) was tuned during route authoring. That proves one route exists, not that the traffic is fair.
 - The web line is visual only; the web-zip is a plain second jump (no swing physics).
 - The completion time covers the last attempt only (the starter resets the clock on every retry).
-- The zone banner can cover the hero mid-jump (seen in the film capture).
+- The zone banner can cover the hero mid-jump: seen in the film capture (Midtown) and in Shriram's playtest (Midtown and Manhattan). Not fixed, so the film matches the build.
 - Focus-loss pause is unit-tested but not shown in the film.
 - No audio — same as starter.
 - Godot 4.7.2 on macOS only; untested on Windows.
-- Git setup is broken on this machine due to an Xcode library mismatch. Repository was initialized via `gh` or GitHub Desktop.
+- Git on this machine was broken by an Xcode library mismatch until 2026-09-25. It was fixed by installing Homebrew git, which is why the history starts at the first pushed commit `1cbbb85`.

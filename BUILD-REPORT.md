@@ -1,5 +1,7 @@
 # First Steps — playable slice
 
+> **Starter document (content kept as written; only this note added).** This file comes from the original [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman) starter and describes that MVP (960 px level, spikes, no double jump). The Rooftop Rush extension and its current state are documented in [README.md](README.md), [CHANGE-BRIEF.md](CHANGE-BRIEF.md), [TEST-REPORT.md](TEST-REPORT.md) and [SUBMISSION.md](SUBMISSION.md).
+
 Built September 10, 2026 under Bear's request: **“Build a simple level for walker-jumpman.”** This is the small control/retry prototype, not the full three-zone, twenty-cherry GDD or a public game release.
 
 ## What is implemented

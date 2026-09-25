@@ -21,6 +21,10 @@ youtube/claude-liam-walker-jumpman-shriram-a-walkthrough in walker mode without 
 7. python3 REEL/tools/write_coverage.py && python3 REEL/tools/write_docs.py
 8. ../brutalist.art/art godot-waikthrough --check REEL
 9. ../brutalist.art/art final REEL --height 2160 --fps 30 --out REEL/exports/landscape
+   If GATE T (type_check.py) reports only the documented false positives in REEL/_qc/GATE-T-OVERRIDE.md
+   (game clouds/sky art and the stock code-card edge), compile with the same compiler without the pre-check:
+   python3 ../brutalist.art/runtime/scripts/compile.py REEL --height 2160 --fps 30 --out REEL/exports/landscape
+   Any other GATE T failure must be fixed, not overridden.
 10. Visual QC: sample frames at 2 fps and at 15/50/85 % of every beat, read them, and log
     defects in REEL/_qc/REPORT.md. Watch the whole export with sound. Never publish.
 ```

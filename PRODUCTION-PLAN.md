@@ -1,5 +1,7 @@
 # walker-jumpman — Production plan
 
+> **Starter document (content kept as written; only this note added).** This file comes from the original [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman) starter and describes that MVP (960 px level, spikes, no double jump). The Rooftop Rush extension and its current state are documented in [README.md](README.md), [CHANGE-BRIEF.md](CHANGE-BRIEF.md), [TEST-REPORT.md](TEST-REPORT.md) and [SUBMISSION.md](SUBMISSION.md).
+
 Design revision: 0.2.0 · September 10, 2026 · **Draft; no implementation started**
 
 **Later implementation record:** Bear's request to build a simple level authorized the first slice. [BUILD-REPORT.md](BUILD-REPORT.md) records its completed work and machine checks. This original plan is retained; no full-MVP ticket or human-review checkpoint is marked complete by implication.

@@ -29,7 +29,7 @@ All visual drawing is original Godot vector drawing using `draw_rect`, `draw_cir
 
 ## References
 
-Spider-Man character design: geometric interpretation only — no copyrighted art reproduced. Colors (#CE1620, #003790) are standard Spider-Man palette references used as a recognizable concept, drawn entirely from primitives.
+Spider-Man character design: geometric interpretation only — no copyrighted art reproduced. The current build uses red `#d3202b`, blue `#2356b8` and ink outlines (`player.gd`); an earlier revision used `#CE1620` / `#003790`. These are standard Spider-Man palette references for a recognizable concept, drawn entirely from primitives. Villains are likewise original vector drawings (`villains.gd`).
 
 ## Film (Brutalist godot-waikthrough, walker mode)
 

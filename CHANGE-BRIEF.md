@@ -82,4 +82,6 @@ Check: visually confirm labels appear when camera enters Zone 3. Camera y is fix
 - 2026-09-24 (prediction check, film capture): Predicted Failure A (eyes detach) did not occur with the redrawn head (engine close-ups, film B04).
   Failure B (route undershoot) was replaced by the new route fixture, which passes (14 ground marks + 3 web-zips).
   Failure C (zone labels hidden): the opposite happened. The zone banner is visible but can **cover the hero** mid-jump. This is an unpredicted defect found in the capture, logged in TEST-REPORT.md.
-
+- 2026-09-24 (revision 3, requested by Shriram, who judged the first art "really bad"): the §1 character description above is the original prediction and is kept.
+  The current Spider-Man is a redraw: ink-outlined capsule limbs; run, jump, fall and idle poses; angled three-quarter eyes (the far eye is intentionally smaller); a chest spider; red boots and gloves.
+  The collider is unchanged (18×28). Engine close-ups are in the film (B04). Shriram's playtest found the chest logo too small to read at normal size (TEST-REPORT §2).

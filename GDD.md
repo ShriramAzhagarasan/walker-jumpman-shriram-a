@@ -1,5 +1,7 @@
 # walker-jumpman — Detailed Game Design Document
 
+> **Starter document (content kept as written; only this note added).** This file comes from the original [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman) starter and describes that MVP (960 px level, spikes, no double jump). The Rooftop Rush extension and its current state are documented in [README.md](README.md), [CHANGE-BRIEF.md](CHANGE-BRIEF.md), [TEST-REPORT.md](TEST-REPORT.md) and [SUBMISSION.md](SUBMISSION.md).
+
 > **Draft 0.2.0 · September 10, 2026 · Human review pending**
 >
 > A Godot-focused design for Walker's **Game brief → Build → Playtest → Inspect → Revise → Export** workflow. This is a specification, not a playable build or a test report.

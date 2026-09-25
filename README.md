@@ -97,4 +97,7 @@ The justification and tests are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md) (revision 
 - [CHANGE-BRIEF.md](CHANGE-BRIEF.md) — predictions written before implementation
 - [TEST-REPORT.md](TEST-REPORT.md) — verification evidence
 - [FRICTIONAL.md](FRICTIONAL.md) — honest log of what worked and what didn't
-- [SOURCES.md](SOURCES.md) — starter credit, asset provenance, AI contributions
+- [SOURCES.md](SOURCES.md): starter credit, asset provenance, AI contributions
+- [SUBMISSION.md](SUBMISSION.md): submission note fields (commit, film link, SHA-256)
+- [youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/](youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/): film beat sheet, script, fact-check, prompts, input log, coverage and QC
+- Starter documents, kept unchanged and describing the original MVP: GDD.md, GAME-BRIEF.md, BUILD-REPORT.md, PLAYTEST-PLAN.md, LEVEL-DESIGN.md, DESIGN-REVIEW.md, PRODUCTION-PLAN.md, ASSET-PLAN.md, `design/`, `evidence/build-manifest.json`, and the `evidence/mechanics-1789*.json` 25-check runs
