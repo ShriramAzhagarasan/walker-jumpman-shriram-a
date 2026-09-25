@@ -64,16 +64,17 @@ Human and AI contributions distinguished throughout.
 
 ---
 
-## Entry 5 — 2026-09-24 — Redraw, skyscrapers, web-zip, moving taxis (AI-recorded; Shriram to add reflections)
+## Entry 5 — 2026-09-24 — Redraw, skyscrapers, web-zip, moving taxis (AI-recorded bullets, then Shriram's reflection)
 
-*Recorded by Claude Code from the session transcript. This is what was tried and checked, not Shriram's personal experience. Shriram should add their own reactions below.*
+*Recorded by Claude Code from the session transcript. The bullets are what was tried and checked, not Shriram's personal experience; Shriram's own reflection follows them.*
 
 - **Trigger (Shriram):** screenshots of the running game with the request: villains and Spider-Man "look really bad"; add skyscrapers with a 2x jump; the web should reach the ceiling; taxi deaths said "spikes"; add taxis moving near and far.
 - **Tried (Claude):** redrew all four characters, reviewing them through engine-rendered close-ups (`tests/capture_art.gd`). The first pass looked blurry from antialiasing, so antialiasing was turned off on fills. Doc Ock's upper tentacles crossed his face and were moved behind him.
 - **Tried (Claude):** a web-zip air jump (`air_jumps = 1`) plus three tall solids. The route driver died three times while being tuned: onto moving taxi A, into taxi C, and landing on taxi D. It was fixed by moving jump marks and changing taxi 4's `phase` from 0.0 to 0.7. **That tuning is why the route test proves a route exists but not that the traffic is fair.**
 - **Test response:** `web-zip-double-jump-once` failed first (rise 111.8 px against a bound of 110). Its bound was widened to 2.2 × 53.34 because a near-apex second jump predicts ≈107–112 px. `coyote-7` now counts ground jumps only, because a late press turns into a web-zip.
 - **Result:** 29 mechanics + 9 keyboard checks pass (`evidence/mechanics-1790304898.29995.json`, `evidence/keyboard-1790304899.58816.json`).
-- **Shriram, add:** what you accepted, changed or rejected; whether the taxis feel fair; what you'd do differently: 
+
+**Shriram's reflection:**
 
 So The villains and Spider-Man honestly looked rough like Goblin, Doc Ock, and Vulture didn't read as themselves at all, so those needed a full redraw. I also wanted real skyscrapers you could actually land on, with a 2x jump to reach them, a web that shoots up and touches the ceiling instead of that weak short arc, a death message that actually says "taxi" and "landed on civilians" instead of the generic "spikes" line, and taxis moving across both the near and far lanes so there's more ways to actually fail (not gonna lie, this makes the game way more fun).
 Once I saw the redraws, the skyscrapers, the ceiling web-zip, the new death messages, and the moving taxis, I was genuinely impressed and called it fantastic, because it was. Later on, the Brutalist film came through too and I was happy with it, "video is great" was my exact reaction. There's a zone-banner overlap in there, but I chose to just note it rather than go back and fix it.

@@ -50,7 +50,7 @@ Earlier results are preserved in the other `evidence/mechanics-*.json` files (th
 
 ---
 
-## Human playtesting — Shriram (normal keyboard/mouse; fill with what you actually saw)
+## Human playtesting — Shriram (normal keyboard/mouse, about 100 runs)
 
 Build: commit `1cbbb85` / source snapshot `bb0f4ad4`. Date/time played: 09/24/2026· How many runs: 100
 
@@ -91,7 +91,7 @@ Build: commit `1cbbb85` / source snapshot `bb0f4ad4`. Date/time played: 09/24/20
 - Observation: Yes so iw as able to see spiderman and the landing was visible every single time when he landed so that wasn't an issue at all. Zone banners and also the time of the day changed and appeared so it was distingushable for me. Banners covered up the character wheneevr i web-zipped in level 2 and level3. The banner was translucent but it covered up the character and i believe that aspect of the game can be reworked to a much more higher banner or a different style.
 
 ### Other people
-Only if someone else actually played: who, what they did, what they said. Otherwise write "none". : none
+None. No one else played this build; all observations above are mine.
 
 ## Inspect-and-revise cycle
 
