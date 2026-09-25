@@ -46,6 +46,8 @@ Commands: `Godot --headless --path godot -s res://tests/test_game.gd` and `-s re
 Source snapshot at this run: `bb0f4ad453a25096bb04b84f1609338760328c0868e43e4dfbb8c09454cd61f7` (method in `youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/CAPTURE.md`).
 Earlier results are preserved in the other `evidence/mechanics-*.json` files (the starter-era 25-check runs included).
 
+**Fresh-copy verification (2026-09-25):** `git clone https://github.com/ShriramAzhagarasan/walker-jumpman-shriram-a` of commit `9195fa9` into an empty folder, then `Godot --headless --path godot --import`. Results: `test_game.gd` 29 checks / 0 failures; `test_keyboard.gd` 9/9 PASS; the main scene runs 120 frames with no script errors. `tools/source_snapshot.py` prints `bb0f4ad4…`, the build shown in the film. The repo contains no `.godot/` cache and no MP4/MP3/AVI/WAV (largest tracked file 2.8 MB).
+
 **Scripted-input film capture (not a human playtest):** `youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/capture/run-01-inputs.jsonl`. The real main scene is played through `Input` events only: taxi death, auto-retry, both facings, pause/resume, R, coyote (+4 ticks), buffer (−4 ticks), wall fall at the first tower without a web-zip, 3 web-zips to the flag, mouse replay, M → menu. `CAPTURE OK`.
 
 ---
