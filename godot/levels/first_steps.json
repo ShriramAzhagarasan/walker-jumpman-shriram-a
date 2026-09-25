@@ -1,0 +1,37 @@
+{
+  "id": "first-steps",
+  "title": "The Amazing Spider-Route",
+  "scope": "Extended 3-zone Spider-Man platformer — Queens (morning), Midtown (afternoon), Manhattan (night). Skyscrapers need the web-zip double jump; taxis patrol rooftops.",
+  "width": 2500,
+  "fall_y": 430,
+  "spawn": [64, 320],
+  "solids": [
+    [0, 320, 448, 64],
+    [160, 304, 48, 16],
+    [512, 320, 224, 64],
+    [576, 288, 48, 32],
+    [784, 246, 80, 154],
+    [912, 320, 56, 64],
+    [1000, 288, 128, 32],
+    [1160, 272, 120, 32],
+    [1328, 212, 72, 188],
+    [1450, 288, 176, 32],
+    [1680, 272, 128, 32],
+    [1860, 204, 80, 196],
+    [1990, 288, 120, 32],
+    [2150, 272, 100, 32],
+    [2280, 288, 144, 32]
+  ],
+  "skyscraper_min_height": 100,
+  "hazards": [
+    [320, 304, 24, 16],
+    [1108, 272, 24, 16]
+  ],
+  "moving_taxis": [
+    {"from": 632, "to": 712, "top": 320, "period": 2.2, "phase": 0.0},
+    {"from": 1470, "to": 1610, "top": 288, "period": 3.4, "phase": 0.25},
+    {"from": 1696, "to": 1790, "top": 272, "period": 1.7, "phase": 0.5},
+    {"from": 2000, "to": 2100, "top": 288, "period": 2.4, "phase": 0.7}
+  ],
+  "finish": [2388, 232, 24, 56]
+}

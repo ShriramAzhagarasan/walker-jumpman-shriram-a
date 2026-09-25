@@ -1,0 +1,100 @@
+{"from":-1,"kind":"state","phase":"menu","reason":"","retries":0,"state":0,"t_s":0.017,"tick":1,"to":0,"x":64.0,"y":320.0}
+{"action":"confirm","kind":"input","phase":"menu","pressed":true,"retries":0,"state":0,"t_s":2.5,"tick":150,"via":"InputEventAction tap","x":64.0,"y":320.0}
+{"from":0,"kind":"state","phase":"menu","reason":"","retries":0,"state":1,"t_s":2.533,"tick":152,"to":1,"x":64.0,"y":320.0}
+{"kind":"phase","phase":"menu","retries":0,"state":1,"t_s":2.533,"tick":152,"x":64.0,"y":320.0}
+{"action":"move_right","kind":"input","phase":"taxi_attempt","pressed":true,"retries":0,"state":1,"t_s":2.55,"tick":153,"x":64.0,"y":320.0}
+{"action":"jump","kind":"input","phase":"taxi_attempt","pressed":true,"retries":0,"state":1,"t_s":3.083,"tick":185,"x":140.6,"y":319.9}
+{"action":"jump","kind":"input","phase":"taxi_attempt","pressed":false,"retries":0,"state":1,"t_s":3.133,"tick":188,"x":148.6,"y":309.5}
+{"from":1,"kind":"state","phase":"taxi_attempt","reason":"Watch the taxis!","retries":1,"state":3,"t_s":4.267,"tick":256,"to":3,"x":320.9,"y":319.9}
+{"action":"move_right","kind":"input","phase":"taxi_attempt","pressed":false,"retries":1,"state":3,"t_s":4.267,"tick":256,"x":320.9,"y":319.9}
+{"kind":"phase","phase":"taxi_attempt","retries":1,"state":3,"t_s":4.267,"tick":256,"x":320.9,"y":319.9}
+{"from":3,"kind":"state","phase":"wait_respawn_1","reason":"Watch the taxis!","retries":1,"state":1,"t_s":4.833,"tick":290,"to":1,"x":64.0,"y":320.0}
+{"kind":"phase","phase":"wait_respawn_1","retries":1,"state":1,"t_s":4.833,"tick":290,"x":64.0,"y":320.0}
+{"action":"move_left","kind":"input","phase":"look_around","pressed":true,"retries":1,"state":1,"t_s":6.35,"tick":381,"x":64.0,"y":320.0}
+{"action":"move_left","kind":"input","phase":"look_around","pressed":false,"retries":1,"state":1,"t_s":6.65,"tick":399,"x":24.7,"y":319.9}
+{"action":"move_right","kind":"input","phase":"look_around","pressed":true,"retries":1,"state":1,"t_s":9.0,"tick":540,"x":19.4,"y":319.9}
+{"action":"move_right","kind":"input","phase":"look_around","pressed":false,"retries":1,"state":1,"t_s":9.167,"tick":550,"x":37.3,"y":319.9}
+{"action":"pause","kind":"input","phase":"look_around","pressed":true,"retries":1,"state":1,"t_s":9.833,"tick":590,"via":"InputEventAction tap","x":42.7,"y":319.9}
+{"kind":"phase","phase":"look_around","retries":1,"state":1,"t_s":9.833,"tick":590,"x":42.7,"y":319.9}
+{"from":1,"kind":"state","phase":"paused","reason":"Watch the taxis!","retries":1,"state":2,"t_s":9.867,"tick":592,"to":2,"x":42.7,"y":319.9}
+{"action":"confirm","kind":"input","phase":"paused","pressed":true,"retries":1,"state":2,"t_s":13.333,"tick":800,"via":"InputEventAction tap","x":42.7,"y":319.9}
+{"from":2,"kind":"state","phase":"paused","reason":"Watch the taxis!","retries":1,"state":1,"t_s":13.367,"tick":802,"to":1,"x":42.7,"y":319.9}
+{"action":"move_right","kind":"input","phase":"paused","pressed":true,"retries":1,"state":1,"t_s":13.833,"tick":830,"x":42.7,"y":319.9}
+{"action":"move_right","kind":"input","phase":"paused","pressed":false,"retries":1,"state":1,"t_s":14.667,"tick":880,"x":151.0,"y":320.0}
+{"action":"restart","kind":"input","phase":"paused","pressed":true,"retries":1,"state":1,"t_s":14.667,"tick":880,"via":"InputEventAction tap","x":151.0,"y":320.0}
+{"kind":"phase","phase":"paused","retries":1,"state":1,"t_s":14.667,"tick":880,"x":151.0,"y":320.0}
+{"kind":"phase","phase":"after_restart","retries":1,"state":1,"t_s":16.333,"tick":980,"x":64.0,"y":320.0}
+{"action":"move_right","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":16.35,"tick":981,"x":64.0,"y":320.0}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":16.883,"tick":1013,"x":140.6,"y":319.9}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":false,"retries":1,"state":1,"t_s":16.933,"tick":1016,"x":148.6,"y":309.5}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":17.9,"tick":1074,"x":294.2,"y":319.9}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":false,"retries":1,"state":1,"t_s":17.95,"tick":1077,"x":302.2,"y":309.5}
+{"kind":"left_floor","note":"walked off the gap edge without jumping","phase":"nozip_attempt","retries":1,"state":1,"t_s":18.933,"tick":1136,"x":459.5,"y":320.2}
+{"coyote_ticks":6,"kind":"coyote_press","on_floor":false,"phase":"nozip_attempt","retries":1,"state":1,"t_s":19.0,"tick":1140,"ticks_after_leaving_floor":4,"x":470.2,"y":323.9}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":19.0,"tick":1140,"x":470.2,"y":323.9}
+{"jumps":3,"kind":"coyote_jump_fired","phase":"nozip_attempt","retries":1,"state":1,"t_s":19.033,"tick":1142,"x":475.5,"y":320.2}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":false,"retries":1,"state":1,"t_s":19.05,"tick":1143,"x":478.2,"y":315.1}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":19.35,"tick":1161,"x":526.2,"y":269.5}
+{"kind":"web_zip","note":"spends the one air jump so the next press can buffer","phase":"nozip_attempt","retries":1,"state":1,"t_s":19.35,"tick":1161,"x":526.2,"y":269.5}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":false,"retries":1,"state":1,"t_s":19.4,"tick":1164,"x":534.2,"y":259.1}
+{"air_jumps_used":1,"buffer_ticks":6,"kind":"buffer_press","on_floor":false,"phase":"nozip_attempt","retries":1,"state":1,"t_s":20.133,"tick":1208,"x":651.5,"y":300.2}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":true,"retries":1,"state":1,"t_s":20.133,"tick":1208,"x":651.5,"y":300.2}
+{"action":"jump","kind":"input","phase":"nozip_attempt","pressed":false,"retries":1,"state":1,"t_s":20.183,"tick":1211,"x":659.5,"y":319.9}
+{"kind":"buffered_jump_fired","phase":"nozip_attempt","retries":1,"state":1,"t_s":20.2,"tick":1212,"ticks_after_press":4,"x":662.2,"y":314.6}
+{"from":1,"kind":"state","phase":"nozip_attempt","reason":"Missed the landing","retries":2,"state":3,"t_s":21.133,"tick":1268,"to":3,"x":775.3,"y":435.9}
+{"action":"move_right","kind":"input","phase":"nozip_attempt","pressed":false,"retries":2,"state":3,"t_s":21.133,"tick":1268,"x":775.3,"y":435.9}
+{"kind":"phase","phase":"nozip_attempt","retries":2,"state":3,"t_s":21.133,"tick":1268,"x":775.3,"y":435.9}
+{"from":3,"kind":"state","phase":"wait_respawn_2","reason":"Missed the landing","retries":2,"state":1,"t_s":21.7,"tick":1302,"to":1,"x":64.0,"y":320.0}
+{"kind":"phase","phase":"wait_respawn_2","retries":2,"state":1,"t_s":21.7,"tick":1302,"x":64.0,"y":320.0}
+{"action":"move_right","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":21.7,"tick":1302,"x":64.0,"y":320.0}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":22.233,"tick":1334,"x":140.6,"y":319.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":22.283,"tick":1337,"x":148.6,"y":309.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":23.25,"tick":1395,"x":294.2,"y":319.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":23.3,"tick":1398,"x":302.2,"y":309.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":24.067,"tick":1444,"x":424.9,"y":319.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":24.117,"tick":1447,"x":432.9,"y":309.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":24.85,"tick":1491,"x":550.2,"y":319.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":24.9,"tick":1494,"x":558.2,"y":309.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":25.433,"tick":1526,"x":630.2,"y":287.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":25.483,"tick":1529,"x":638.2,"y":277.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":25.767,"tick":1546,"x":683.5,"y":232.2}
+{"kind":"web_zip","phase":"clean_route","retries":2,"state":1,"t_s":25.767,"tick":1546,"x":683.5,"y":232.2}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":25.817,"tick":1549,"x":691.5,"y":221.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":27.417,"tick":1645,"x":947.6,"y":319.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":27.467,"tick":1648,"x":955.6,"y":309.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":28.183,"tick":1691,"x":1070.2,"y":287.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":28.233,"tick":1694,"x":1078.2,"y":277.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":29.033,"tick":1742,"x":1206.2,"y":271.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":29.083,"tick":1745,"x":1214.2,"y":261.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":29.367,"tick":1762,"x":1259.5,"y":216.2}
+{"kind":"web_zip","phase":"clean_route","retries":2,"state":1,"t_s":29.367,"tick":1762,"x":1259.5,"y":216.2}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":29.417,"tick":1765,"x":1267.5,"y":205.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":30.183,"tick":1811,"x":1390.2,"y":211.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":30.233,"tick":1814,"x":1398.2,"y":201.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":31.5,"tick":1890,"x":1600.9,"y":287.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":31.55,"tick":1893,"x":1608.9,"y":277.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":32.15,"tick":1929,"x":1704.9,"y":271.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":32.2,"tick":1932,"x":1712.9,"y":261.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":32.683,"tick":1961,"x":1790.2,"y":230.6}
+{"kind":"web_zip","phase":"clean_route","retries":2,"state":1,"t_s":32.683,"tick":1961,"x":1790.2,"y":230.6}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":32.733,"tick":1964,"x":1798.2,"y":223.1}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":33.533,"tick":2012,"x":1926.2,"y":203.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":33.583,"tick":2015,"x":1934.2,"y":193.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":34.533,"tick":2072,"x":2086.2,"y":287.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":34.583,"tick":2075,"x":2094.2,"y":277.5}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":true,"retries":2,"state":1,"t_s":35.417,"tick":2125,"x":2227.5,"y":271.9}
+{"action":"jump","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":1,"t_s":35.467,"tick":2128,"x":2235.5,"y":261.5}
+{"from":1,"kind":"state","phase":"clean_route","reason":"Missed the landing","retries":2,"state":4,"t_s":36.4,"tick":2184,"to":4,"x":2384.9,"y":287.9}
+{"action":"move_right","kind":"input","phase":"clean_route","pressed":false,"retries":2,"state":4,"t_s":36.4,"tick":2184,"x":2384.9,"y":287.9}
+{"kind":"phase","phase":"clean_route","retries":2,"state":4,"t_s":36.4,"tick":2184,"x":2384.9,"y":287.9}
+{"action":"mouse_warp","calibration":["(18.51849, 12.40741)","(92.59259, 86.48148)"],"kind":"input","phase":"complete_hold","retries":2,"state":4,"t_s":43.15,"tick":2589,"window_pos":"(1728.0, 1194.0)","x":2384.9,"y":287.9}
+{"action":"mouse_left_click","hud_local":"(319.6296, 214.6296)","kind":"input","phase":"complete_hold","retries":2,"state":4,"t_s":43.4,"tick":2604,"window_pos":"(1728.0, 1194.0)","x":2384.9,"y":287.9}
+{"from":4,"kind":"state","phase":"complete_hold","reason":"Missed the landing","retries":0,"state":1,"t_s":43.433,"tick":2606,"to":1,"x":64.0,"y":320.0}
+{"kind":"phase","phase":"complete_hold","retries":0,"state":1,"t_s":43.433,"tick":2606,"x":64.0,"y":320.0}
+{"action":"pause","kind":"input","phase":"replay","pressed":true,"retries":0,"state":1,"t_s":45.433,"tick":2726,"via":"InputEventAction tap","x":64.0,"y":320.0}
+{"from":1,"kind":"state","phase":"replay","reason":"Missed the landing","retries":0,"state":2,"t_s":45.467,"tick":2728,"to":2,"x":64.0,"y":320.0}
+{"action":"menu","kind":"input","phase":"replay","pressed":true,"retries":0,"state":2,"t_s":46.933,"tick":2816,"via":"InputEventAction tap","x":64.0,"y":320.0}
+{"kind":"phase","phase":"replay","retries":0,"state":2,"t_s":46.933,"tick":2816,"x":64.0,"y":320.0}
+{"from":2,"kind":"state","phase":"main_menu","reason":"Missed the landing","retries":0,"state":0,"t_s":46.967,"tick":2818,"to":0,"x":64.0,"y":320.0}
+{"kind":"phase","phase":"main_menu","retries":0,"state":0,"t_s":48.933,"tick":2936,"x":64.0,"y":320.0}
+{"failed":"","kind":"result","ok":true,"phase":"done","retries":0,"state":0,"t_s":48.967,"tick":2938,"x":64.0,"y":320.0}

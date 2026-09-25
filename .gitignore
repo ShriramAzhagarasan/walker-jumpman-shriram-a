@@ -1,0 +1,17 @@
+# Godot caches
+.godot/
+**/.godot/
+# Large media stays out of GitHub (course media storage instead)
+*.mp4
+*.mp3
+*.avi
+*.wav
+*.mov
+youtube/*/mp3/
+youtube/*/media/*.mp4
+youtube/*/exports/
+youtube/*/_qc/frames/
+youtube/*/_qc/labels/
+youtube/*/.remotion-*/
+node_modules/
+.DS_Store

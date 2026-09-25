@@ -1,0 +1,321 @@
+{
+ "schema_version": 1,
+ "game": {
+  "name": "walker-jumpman-shriram-a",
+  "build_id": "bb0f4ad453a25096bb04b84f1609338760328c0868e43e4dfbb8c09454cd61f7"
+ },
+ "captures": {
+  "run-01": {
+   "path": "capture/run-01.mp4",
+   "sha256": "9f2a8ef412eae6983e8f1a20db8188592d260032a66ece1a235224b368f29b4f",
+   "build_id": "bb0f4ad453a25096bb04b84f1609338760328c0868e43e4dfbb8c09454cd61f7",
+   "method": "scripted-input",
+   "input_log": "capture/run-01-inputs.jsonl"
+  }
+ },
+ "features": [
+  {
+   "id": "menu-start",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B02",
+     "start_s": 0.0,
+     "action_s": 2.5,
+     "end_s": 3.0,
+     "observation": "Menu modal 'Spider-Man: Rooftop Rush'; Enter (InputEventAction confirm, tick 150) starts play.",
+     "riff": "Enter starts; one key, no extra screens."
+    }
+   ]
+  },
+  {
+   "id": "run-and-jump",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B02",
+     "start_s": 2.6,
+     "action_s": 3.08,
+     "end_s": 3.9,
+     "observation": "Holding right runs; jump at tick 185 lands on the small step.",
+     "riff": "Movement tuning is the starter's; only the look changed."
+    }
+   ]
+  },
+  {
+   "id": "taxi-hazard-death",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B02",
+     "start_s": 3.5,
+     "action_s": 4.267,
+     "end_s": 4.7,
+     "observation": "Player contacts the parked taxi at x=320.9; 'Watch the taxis! You landed on a cab full of civilians.' overlay; RETRIES 01.",
+     "riff": "Spikes became cabs; the kill zone is the cab outline."
+    }
+   ]
+  },
+  {
+   "id": "auto-retry",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B03",
+     "start_s": 4.7,
+     "action_s": 4.833,
+     "end_s": 5.6,
+     "observation": "0.57 s after contact the player respawns at x=64, RETRIES stays 01.",
+     "riff": "Cheap retry: back in half a second."
+    }
+   ]
+  },
+  {
+   "id": "facing-left-right",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B03",
+     "start_s": 6.0,
+     "action_s": 6.35,
+     "end_s": 9.0,
+     "observation": "move_left for 18 ticks: sprite mirrors and idles facing left; later faces right again.",
+     "riff": "The whole drawing mirrors via one transform."
+    }
+   ]
+  },
+  {
+   "id": "pause-resume",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B03",
+     "start_s": 9.5,
+     "action_s": 9.833,
+     "end_s": 13.6,
+     "observation": "Esc opens 'Take a breath.'; the timer and taxis freeze; Enter at tick 800 resumes.",
+     "riff": "Pause freezes everything, timer included."
+    }
+   ]
+  },
+  {
+   "id": "manual-restart",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B03",
+     "start_s": 14.0,
+     "action_s": 14.667,
+     "end_s": 15.6,
+     "observation": "R at tick 880 returns to the start; RETRIES stays 01 (not a death).",
+     "riff": "Manual restart isn't counted as a death."
+    }
+   ]
+  },
+  {
+   "id": "coyote-time",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B06",
+     "start_s": 18.5,
+     "action_s": 19.0,
+     "end_s": 19.5,
+     "observation": "Leaves the floor at tick 1136 without jumping; press at 1140 (4 ticks late, window 6) and the jump fires at 1142 (input log).",
+     "riff": "Coyote time forgives a late press."
+    }
+   ]
+  },
+  {
+   "id": "jump-buffer",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B06",
+     "start_s": 19.8,
+     "action_s": 20.133,
+     "end_s": 20.45,
+     "observation": "With the air jump spent, a press at tick 1208 while airborne fires a jump on landing at 1212 (buffer window 6).",
+     "riff": "Buffer forgives an early press, once the web-zip is spent."
+    }
+   ]
+  },
+  {
+   "id": "skyscraper-needs-web-zip",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B07",
+     "start_s": 20.45,
+     "action_s": 21.133,
+     "end_s": 21.65,
+     "observation": "With no air jump left, the ground jump hits the first tower's wall below its roof (y 246) and falls: 'Missed the landing'; RETRIES 02.",
+     "riff": "53 px jump vs a 74 px tower: the source numbers predict this."
+    }
+   ]
+  },
+  {
+   "id": "fall-death",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B07",
+     "start_s": 20.8,
+     "action_s": 21.133,
+     "end_s": 21.65,
+     "observation": "Falling below fall_y 430 triggers 'Missed the landing / Straight down onto the civilians below.'",
+     "riff": "Falling and taxis give different messages."
+    }
+   ]
+  },
+  {
+   "id": "web-zip-double-jump",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B08",
+     "start_s": 25.3,
+     "action_s": 25.767,
+     "end_s": 26.6,
+     "observation": "Second press in the air at tick 1546; web line from the wrist to the ceiling; lands on the glass tower (new landing 1).",
+     "riff": "One air jump, visible as a web to the ceiling."
+    }
+   ]
+  },
+  {
+   "id": "zone-transitions",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B08",
+     "start_s": 24.5,
+     "action_s": 25.0,
+     "end_s": 27.0,
+     "observation": "Crossing x=512 shows the 'Afternoon \u00b7 02 MIDTOWN CROSSING' banner and the sky blends to day; the banner overlaps the hero (observed defect).",
+     "riff": "Zone banner informs but can cover the player."
+    }
+   ]
+  },
+  {
+   "id": "moving-taxis",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B09",
+     "start_s": 30.5,
+     "action_s": 31.5,
+     "end_s": 32.5,
+     "observation": "Taxis patrol the Manhattan rooftops with headlights leading; the route passes between them.",
+     "riff": "Traffic is timed off the attempt clock, so retries replay it."
+    }
+   ]
+  },
+  {
+   "id": "manhattan-skyscrapers",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B09",
+     "start_s": 28.8,
+     "action_s": 29.367,
+     "end_s": 30.3,
+     "observation": "Web-zip at tick 1762 onto tower two (x 1328); again at tick 1961 onto tower three (x 1860).",
+     "riff": "Two more landings that only the web-zip reaches."
+    }
+   ]
+  },
+  {
+   "id": "animated-villains",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B03",
+     "start_s": 5.0,
+     "action_s": 6.0,
+     "end_s": 9.0,
+     "observation": "Vulture flaps across the Queens sky; Goblin and Doc Ock appear in later zones (decorative, no collision).",
+     "riff": "Background characters animate but can't hurt you."
+    }
+   ]
+  },
+  {
+   "id": "finish-completion",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B10",
+     "start_s": 35.88,
+     "action_s": 36.4,
+     "end_s": 37.5,
+     "observation": "Reaches the flag at x=2385 (tick 2184): 'You're Amazing, Spider-Man.' with this attempt's time and 2 retries.",
+     "riff": "Timer covers the last attempt only."
+    }
+   ]
+  },
+  {
+   "id": "replay-mouse",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B10",
+     "start_s": 42.5,
+     "action_s": 43.4,
+     "end_s": 44.0,
+     "observation": "Real cursor warped to the PLAY AGAIN button (HUD 319.6, 214.6) and left-clicked at tick 2604; fresh session at tick 2606, RETRIES 00.",
+     "riff": "Replay resets the counters."
+    }
+   ]
+  },
+  {
+   "id": "main-menu",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "run-01",
+     "beat_id": "B10",
+     "start_s": 45.0,
+     "action_s": 46.933,
+     "end_s": 48.9,
+     "observation": "Esc then M (tick 2816) returns to the main menu modal.",
+     "riff": "Back to the menu from pause."
+    }
+   ]
+  },
+  {
+   "id": "focus-loss-pause",
+   "status": "implemented",
+   "note": "not demonstrated in the film; unit test focus-loss-pauses only",
+   "evidence": []
+  },
+  {
+   "id": "checkpoints",
+   "status": "planned",
+   "reason": "Next improvement named in the verdict; not built.",
+   "evidence": []
+  },
+  {
+   "id": "audio",
+   "status": "planned",
+   "reason": "The game has no sound; none is claimed or added.",
+   "evidence": []
+  }
+ ]
+}

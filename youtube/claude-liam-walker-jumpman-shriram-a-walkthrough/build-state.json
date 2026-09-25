@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "[art] command failed:\n/opt/homebrew/opt/python@3.13/bin/python3.13 /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/brutalist.art/runtime/qc/final_frame_check.py /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-jumpman-shriram-a/youtube/claude-liam-walker-jumpman-shriram-a-walkthrough --mp4 /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-jumpman-shriram-a/youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/exports/landscape/.claude-liam-walker-jumpman-shriram-a-walkthrough-candidate-xpttc9q7/candidate.mp4 --sheet /Users/shriramalagarasan/Desktop/NortheasternUniversity/Fall2026/walker-jumpman-shriram-a/youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/clips/_work/resolved-sheet.json\n",
+  "at": "2026-09-24T23:54:22.834538-04:00"
+}
