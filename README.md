@@ -21,76 +21,74 @@ Engine: Godot 4.7.2.stable.official. No .NET runtime or external assets required
 
 Alternatively, double-click `walker-jumpman.command` on macOS if Godot is installed in Applications.
 
-**Controls:** A/D or arrow keys to move · Space to jump · Space again mid-air to web-zip (double jump) · R to retry · Esc or P to pause · Enter to start/resume
+**Controls:** A/D or arrow keys to move · Space to jump · Space again mid-air to web-zip (double jump) · R to retry · Esc or P to pause · Enter (or click) to start/resume/replay · M for the main menu (from pause or completion)
 
-### Latest update — villains, skyscrapers, web-zip, traffic
-
-- **Characters redrawn:** Spider-Man (outlined, animated run/jump/idle poses, angled eye lenses, chest spider), Vulture (feathered green wings, white ruff), Green Goblin (purple hat and tunic, bat glider, pumpkin bomb), Doctor Octopus (trench coat, goggles, four segmented claw tentacles). Villains now animate every frame (`features/villains/villains.gd`).
-- **Web-zip double jump:** one extra jump in the air. The web line shoots from Spider-Man's wrist all the way to the ceiling of the play area.
-- **Skyscrapers:** three tall towers (x=784, 1328, 1860) that are 60–74 px above their neighbours, which one 53 px jump can't reach. You have to web-zip.
-- **Moving taxis:** four cabs patrol rooftops, some over short ranges and some over long ones, alongside the two parked cabs. Traffic is timed off the attempt clock, so every retry replays it the same way.
-- **Death messages:** "Watch the taxis! You landed on a cab full of civilians." / "Missed the landing: straight down onto the civilians below."
-- **Scenery:** the sky fades smoothly between zones, every rooftop is a full building down to the street, and there's a new moon.
+**Tests:** `godot --headless --path godot -s res://tests/test_game.gd` (29 checks) and `-s res://tests/test_keyboard.gd` (9 checks); all pass. See [TEST-REPORT.md](TEST-REPORT.md).
 
 ---
 
 ## Changes from starter
 
-### Character — Spider-Man
+### Character — Spider-Man (`godot/features/player/player.gd`)
 
-Replaced the starter's ink/blue "Jumpman" character with a geometric Spider-Man:
-- Red (`#CE1620`) circular head and chest; blue (`#003790`) arms and legs
-- White elongated eye lens polygons — the primary identifying feature, facing-aware (front eye is larger)
-- Spider cross symbol on chest (two overlapping black rectangles)
-- Black shoulder seam separating head from torso
-- Stride animation preserved from starter
-- Collision shape and movement parameters **unchanged**
+The starter's ink/blue Jumpman is replaced by a procedural Spider-Man, drawn in `_draw()` from primitives (no sprites):
+- Red mask with web lines and big angled white eyes (three-quarter view), red chest with a black spider, blue flanks and legs, red boots and gloves; dark ink outline on every part
+- Capsule limbs with animated **run** (stride + arm swing), **jump** (knees tucked, far arm firing the web), **fall** and **idle** poses
+- Mirrors left/right with one transform (`draw_set_transform(…, Vector2(facing, 1))`)
+- **Collider unchanged:** `RectangleShape2D(18, 28)` at `(0, -14)`
 
-### Level — Manhattan Rooftops (Zone 3)
+### Level — Rooftop Rush (`godot/levels/first_steps.json`, `godot/game/session.gd`)
 
-Three new elevated platforms appended beyond the original route (level width 960 → 1600):
+Width 960 → **2,500 px** across three zones, with the finish moved from x=916 to **x=2388**:
 
-| Platform | x | top-y | gap from previous |
-|----------|---|-------|-------------------|
-| Rooftop 1 | 1000–1128 | 288 | 40 px (requires jump) |
-| Rooftop 2 | 1160–1280 | 272 | 32 px + spike hazard |
-| Rooftop 3 | 1328–1472 | 288 | 48 px |
+| Zone | x range | Time of day | Key challenges |
+|---|---|---|---|
+| Queens | 0–512 | morning | the starter's step, gap and first hazard (now a parked taxi), kept playable |
+| Midtown | 512–1000 | afternoon | a block, a moving taxi, then the **glass tower** (x=784, roof 74 px up), which needs the web-zip |
+| Manhattan | 1000–2500 | night | parked taxi, **tower two** (x=1328), roofs with moving taxis, **tower three** (x=1860), the flag |
 
-New spike hazard at x=1108–1132 on Rooftop 1's right edge — player must jump before the spikes and clear the gap in one movement.
+- New landings: 3 skyscrapers + 8 rooftops beyond the starter route. The starter's last roof (x 784–960) became the glass tower plus a short roof.
+- Hazards: spikes → **2 parked + 4 moving taxis** (short and long patrols, timed off the attempt clock). The collision uses the cab's outline.
+- Deaths name the cause: "Watch the taxis! You landed on a cab full of civilians." / "Missed the landing: straight down onto the civilians below."
+- Every rooftop is drawn as a full building. The sky blends between zones. Animated background villains (Vulture, Green Goblin, Doctor Octopus in `godot/features/villains/villains.gd`) are decorative, with no collision.
 
-Finish relocated from x=916 to x=1432 (Rooftop 3). Player must complete Zone 3 to win.
+### Movement: one justified addition (`godot/features/player/tuning.gd`)
 
-City building silhouettes drawn in the background behind Zone 3.
+The existing values are unchanged (speed, acceleration, jump −320, gravity 960, coyote 6, buffer 6).
+New: `air_jumps = 1`, `air_jump_velocity = -320`. This is a **web-zip** second jump, requested so skyscrapers are reachable only with it (53 px single jump vs 60–74 px towers).
+The justification and tests are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md) (revision 2).
 
 ### Supporting code changes
 
 | File | Change |
-|------|--------|
-| `player.gd` | `_draw()` replaced with Spider-Man character |
-| `first_steps.json` | Level width 1600, 3 new platforms, new hazard, finish relocated |
-| `session.gd` | Background extended; grid extends to `level.width`; hazard and finish drawing use entry y-coords (not hard-coded 320) |
-| `hud.gd` | Title, subtitle, progress bar range, menu text updated |
-| `route_driver.gd` | 3 new jump marks added (945, 1070, 1260) |
-| `test_game.gd` | Route tick limit raised 900→1500 for longer level |
-
----
+|---|---|
+| `features/player/player.gd` | Spider-Man drawing; web-zip; web line anchored to the play-area ceiling |
+| `features/player/tuning.gd` | `air_jumps`, `air_jump_velocity` added |
+| `features/villains/villains.gd` | **new**: animated Vulture, Goblin, Doc Ock |
+| `game/session.gd` | Zone backgrounds, skyscrapers, taxi hazards (parked + moving), death reasons |
+| `ui/hud.gd` | Zone banner, death detail line, menu/controls text |
+| `levels/first_steps.json` | 2,500 px level, 15 solids, taxis, finish at x=2388 |
+| `tests/route_driver.gd` | New route: 14 ground jumps + 3 web-zips |
+| `tests/test_game.gd` | Updated and new checks (29 total) |
+| `tests/capture_art.gd` | **new**: engine-rendered character close-ups |
 
 ## Known limitations
 
-- Jump marks for the automated test route were derived from physics math; empirical Godot verification pending.
+- The moving-taxi timing has not been tested for fairness with first-time players, and one taxi's phase was tuned to the automated route.
+- The web line is visual only (no swing physics). The zone banner can cover Spider-Man mid-jump.
+- The completion time covers the last attempt only (starter behaviour).
 - No audio (same as starter).
-- Git setup requires Xcode CLI tools fix before pushing to GitHub.
-- Film link: [to be added after recording]
-- Film SHA-256: [to be added]
+- The focus-loss pause is unit-tested but not shown in the film. The Brutalist type-check pre-gate was overridden for 4 documented false positives (`youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/_qc/GATE-T-OVERRIDE.md`).
 
 ---
 
 ## Final film
 
-URL: [to be added]
-Filename: [to be added]
-SHA-256: [to be added]
-Game revision shown in film: [commit SHA]
+- **File:** `claude-liam-walker-jumpman-shriram-a-walkthrough.mp4`: Brutalist godot-waikthrough, walker mode, 3840×2160, 30 fps, 3 min 57 s. Narrated by Liam (Kokoro), in for Bear.
+- **SHA-256:** `95d5bce41859a049246d39290566955ad2fa322d9066f48a19203c7930f710c4`
+- **Link:** [fill: course media storage URL]. The MP4 is not in GitHub.
+- **Game revision shown:** commit `1cbbb850b988188bb2e28377dd897c2ff93d460b` · source snapshot `bb0f4ad453a25096bb04b84f1609338760328c0868e43e4dfbb8c09454cd61f7`
+- **Sources, evidence and QC:** `youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/`. Gameplay is a scripted-input engine capture, labeled on screen, not a human playtest.
 
 ---
 

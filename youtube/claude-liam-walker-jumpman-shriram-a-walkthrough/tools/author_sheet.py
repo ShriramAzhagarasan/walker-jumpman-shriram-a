@@ -80,8 +80,8 @@ beats = [
   "role_note": "Source cause → prediction. ClaudeCodeBeat shows real file lines only (tuning.gd lines 6-7 and 11-13; first_steps.json skyscraper rows).",
   "narration_text": "Here's the cause. Jump strength and gravity are the starter's numbers, untouched, so one jump rises about fifty-three pixels. Each skyscraper roof sits sixty to seventy-four pixels above its neighbour. The only new rule is one air jump. That makes a testable prediction: without a web-zip left, the first tower is out of reach.",
   "shot": remotion("ClaudeCodeBeat", {
-      "title": "tuning.gd + first_steps.json (actual lines)",
-      "code": "# godot/features/player/tuning.gd\n@export var jump_velocity: float = -320.0\n@export var gravity: float = 960.0\n## Web-zip double jump: one extra jump in the air, needed to reach skyscraper roofs.\n@export var air_jumps: int = 1\n@export var air_jump_velocity: float = -320.0\n\n# godot/levels/first_steps.json  (x, top y, width, height)\n[512, 320, 224, 64],\n[576, 288, 48, 32],\n[784, 246, 80, 154],",
+      "title": "tuning.gd + first_steps.json (actual lines, excerpt)",
+      "code": "# godot/features/player/tuning.gd\n@export var jump_velocity: float = -320.0\n@export var gravity: float = 960.0\n@export var air_jumps: int = 1\n@export var air_jump_velocity: float = -320.0\n\n# levels/first_steps.json [x, top, w, h]\n[512, 320, 224, 64],\n[576, 288, 48, 32],\n[784, 246, 80, 154],",
       "sparkLine": "53 px jump. 74 px tower.", "language": "gdscript", "largeText": False, "brandLabel": "@NikBearBrown"},
       [{"at": "0.1", "event": "tuning.gd lines: jump_velocity, gravity"}, {"at": "0.45", "event": "air_jumps = 1 lines"},
        {"at": "0.7", "event": "level rows: roof at y 320, block 288, tower 246"}])},
@@ -183,12 +183,11 @@ beats = [
       [{"at": "0.0", "event": "title card"}, {"at": "0.3", "event": "@NikBearBrown + mascot"}])},
 ]
 
-GAMEPLAY_QC = {"full_bleed": True,
-    "contrast_regions": [{"label": "HUD title and controls", "box": [0.02, 0.01, 0.71, 0.17]},
-                         {"label": "SCRIPTED-INPUT CAPTURE label", "box": [0.726, 0.106, 0.968, 0.160]}],
-    "contrast_reason": "Real engine footage fills the frame edge to edge by design (the game's own HUD bars and play area). "
-                       "The essential text is the game HUD and the burned-in capture label; whole-frame average ink is dominated by the "
-                       "sky/building art, not text. Pixels inspected in _qc/gameplay-slots.png and _qc/B06-hold.png."}
+GAMEPLAY_QC = {
+    "contrast_regions": [{"label": "game HUD title and controls", "box": [0.08, 0.06, 0.60, 0.21]},
+                         {"label": "SCRIPTED-INPUT CAPTURE caption band", "box": [0.074, 0.905, 0.93, 0.955]}],
+    "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; "
+                       "whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."}
 for b in beats:
     if b["shot"].get("type") == "GAMEPLAY":
         b["qc"] = GAMEPLAY_QC

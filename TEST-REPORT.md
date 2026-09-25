@@ -1,6 +1,6 @@
 # TEST-REPORT — walker-jumpman-shriram-a
 
-Engine: Godot 4.7.2.stable.official · macOS · Source snapshot bb0f4ad4 (see below) · Git commit SHA: [fill after committing]
+Engine: Godot 4.7.2.stable.official · macOS · Source snapshot bb0f4ad4 (see below) · Git commit SHA: `1cbbb850b988188bb2e28377dd897c2ff93d460b`
 
 ---
 
@@ -50,51 +50,48 @@ Earlier results are preserved in the other `evidence/mechanics-*.json` files (th
 
 ---
 
-## Human playtesting
+## Human playtesting — Shriram (normal keyboard/mouse; fill with what you actually saw)
+
+Build: commit `1cbbb85` / source snapshot `bb0f4ad4`. Date/time played: 09/24/2026· How many runs: 100
 
 ### 1. Startup and controls
-- [ ] Project runs from fresh import
-- [ ] A/D and arrow keys move character
-- [ ] Space jumps; holding Space does not auto-bounce
-- [ ] Pressing Space again mid-air web-zips once (web line reaches the ceiling)
-- [ ] R retries immediately
-- [ ] Esc/P pauses; Esc again or Enter resumes
-- Observation: [fill]
+- [x] Game launches (walker-jumpman.command or Godot F5); menu reads "Spider-Man: Rooftop Rush"
+- [x] A/D and arrow keys move; Space jumps; holding Space does not auto-bounce
+- [x] Pressing Space again mid-air web-zips once (web line reaches the ceiling); a third press does nothing
+- [x] Esc/P pauses ("Take a breath."); Enter resumes; M returns to the main menu
+- [x] R restarts immediately and does not add a retry
+- Observation: Launched godot application and opened the game file, clicked on F5 to play the game. The main menu showed up with the title "Spider-Man:Rooftop Rush" , I clicked on start to play, both the arrows and A/D works for moving the character. Space gave me a single jump and holding space after pressing doesn't do anything and i just fall which is expected. If i click space the 2nd time after i am already in the air after clicking it once, the web zip works where when he is already up, he webzips to go even up. Third press doesn't do anything which is again expected, as we don't want him to fly as if he is just gliding, that would make this gameplay really easy and he would just be gliding and not interact with any of the objects in the ground. i am able to pause wherever i want which is good and i am able to easily resume it, return to the main menu and restart it without a problem.  
 
 ### 2. Character appearance
-- [ ] Spider-Man red/blue body visible at start
-- [ ] Eye lenses switch side when turning around (facing left vs. right)
-- [ ] Leg stride animates while walking
-- [ ] No visual floating outside the expected collision boundary
-- [ ] Character reads sensibly during a jump (not distorted)
-- Observation: [fill]
+- [x] Spider-Man reads clearly standing, running, jumping, falling
+- [x] Facing left and right both look right (eyes/arms mirror)
+- [x] Nothing drawn far outside where he actually collides (landing on edges looks honest)
+- [x] Villains (Vulture, Goblin, Doc Ock) are recognisable; you understood they can't hurt you
+- Observation: The character looks like a 2-d version of spider man. it is recognisable to everyone that he is spider-man, maybe if we talk about a flaw, i could have indiviually redesigned him better so that the spider-logo on his chest is visibile. He faces left and right and that looks natural, no problem there. yea nothing is drawn far outside when he collides with the taxi. villians look like the comic version of the characters and after you trying passing through them, you can understand they can't hurt you. maybe in the next version, we can work on them using their power-ups and attacking us which can be interesting.
 
-### 3. Extended route — Zone 3
-- [ ] Gap between Zone 2 end (x=960) and Rooftop 1 (x=1000) requires a jump
-- [ ] Taxi on Rooftop 1 right edge (x≈1108) kills on contact
-- [ ] Skyscrapers (x=784, 1328, 1860) cannot be reached with one jump; web-zip reaches them
-- [ ] Moving taxis (x≈632–712, 1470–1610, 1696–1790, 2000–2100) can be dodged by timing
-- [ ] Gap between Rooftop 1 and Rooftop 2 (32 px, height increase) requires a precise jump
-- [ ] Gap between Rooftop 2 and Rooftop 3 (48 px) requires a jump
-- [ ] Flag on Rooftop 3 is reachable and triggers completion
-- Observation: [fill]
+### 3. Extended route
+- [x] Queens section (step, parked taxi, gap) still playable as in the starter
+- [x] Glass tower (x≈784): a single jump fails, web-zip reaches it
+- [x] Manhattan: parked taxi, tower two (x≈1328), moving taxis, tower three (x≈1860)
+- [x] Reached the flag (x≈2388) with normal play. Attempts needed: 4
+- Observation (was any jump unclear or unfair? did moving taxis feel fair?): The route was clear as it depicted new york city's map perfectly. while going through the glass tower, i was about to fall but web-zipping(two space-bars) got me up which was nice and actually felt like a game. in Manhattan part of the game, the moving taxis were tricky an di had to be really careful as that took me 3 tries in the first time when i try to beat the game and it is still tricky for me to beat it. i feel the gameplay was fair oncei learnt how to wait and jump when the cabs were moving so fast.
 
 ### 4. Failure and recovery
-- [ ] Walking into the Zone 1 taxi (x=320–344) triggers death and "Watch the taxis!" / civilians message
-- [ ] Falling off any platform triggers death and "Missed the landing" / civilians message
-- [ ] Game auto-retries in ~0.55 s, respawning at x=64, y=320
-- [ ] R key retries immediately at any point
-- [ ] After completion, Enter restarts a fresh run (deaths reset to 0)
-- Observation: [fill]
+- [x] Taxi contact shows "Watch the taxis! / You landed on a cab full of civilians."
+- [x] Falling shows "Missed the landing / Straight down onto the civilians below."
+- [x] Auto-retry returns you to the start in about half a second; RETRIES counts deaths
+- [x] After the flag, Enter (or clicking PLAY AGAIN) starts a fresh run with RETRIES 00
+- Observation: when i fell on the taxi it showed "Watch the taxis!" with the civilians line. and when i just missed a block and fell down, it "Missed the landing". Each retry put me back at the start in under a second, and retries counted only deaths. After that if i beat the game, it shows a clean run with like 19.2 seconds/ 0 retries.
 
 ### 5. Camera and presentation
-- [ ] Camera follows into Zone 3; Rooftop 1 landing is visible before jumping
-- [ ] "03 / ROOFTOP RUSH" label visible when entering Zone 3
-- [ ] "FINISH" label visible on Rooftop 3
-- [ ] Progress bar reaches 100% at the flag
-- Observation: [fill]
+- [x] Camera keeps the next landing visible before each jump
+- [x] Zone banners (Queens / Midtown / Manhattan) appear when crossing zones
+- [x] Did a banner ever cover Spider-Man and get in your way? (the film capture shows it can) : yes it did
+- [x] Progress bar fills toward the flag; HUD text readable
+- Observation: Yes so iw as able to see spiderman and the landing was visible every single time when he landed so that wasn't an issue at all. Zone banners and also the time of the day changed and appeared so it was distingushable for me. Banners covered up the character wheneevr i web-zipped in level 2 and level3. The banner was translucent but it covered up the character and i believe that aspect of the game can be reworked to a much more higher banner or a different style.
 
----
+### Other people
+Only if someone else actually played: who, what they did, what they said. Otherwise write "none". : none
 
 ## Inspect-and-revise cycle
 
@@ -103,18 +100,14 @@ Earlier results are preserved in the other `evidence/mechanics-*.json` files (th
 - Cause (found in code): `session.gd` set `death_reason = "Missed the landing" if fatal else "Watch the spikes"` before checking hazards, so the text never depended on what killed you.
 - Change: separate `hit_taxi` / `fell` checks. Taxi: "Watch the taxis! You landed on a cab full of civilians." Fall: "Missed the landing / Straight down onto the civilians below." The HUD shows a second detail line.
 - Re-check: `actual-taxi-collision` asserts `"taxi" in death_reason`; `fall-boundary` asserts `"civilians" in death_detail` (both PASS). Visible in the film, B02 and B07.
-- Revision commit: [fill SHA]
+- Revision commit: `1cbbb85` (the first pushed commit contains this revision; there is no earlier git history because git was broken on this machine until 2026-09-25)
 
 **Cycle 2: villain and hero art read poorly (observation by Shriram, from screenshots: "everyone looks really bad")**
 - Change: Spider-Man, Vulture, Green Goblin and Doctor Octopus redrawn as outlined vector characters; the villains now animate (the scene never redrew before).
 - Re-check: engine close-ups (`tests/capture_art.gd`, film B04). Collider unchanged, and `launch-grounded` / `left-wall` / `low-ceiling` still pass.
-- Revision commit: [fill SHA]
+- Revision commit: `1cbbb85` (the first pushed commit contains this revision; there is no earlier git history because git was broken on this machine until 2026-09-25)
 
 **Open observation from the film capture (not yet revised):** the zone banner ("MIDTOWN CROSSING") draws over the hero during the first web-zip (capture ≈ 25.0–27.7 s, film B08). It is logged as a known defect, not fixed, so that the film matches the submitted build.
-
-## Human playtest (Shriram, required; the scripted capture does not count)
-
-*(Fill with what you actually saw with your own hands: route, failure/recovery, replay, feel, fairness of the moving taxis, readability. Record any other person's feedback only if they really played.)*
 
 ## Known limitations
 

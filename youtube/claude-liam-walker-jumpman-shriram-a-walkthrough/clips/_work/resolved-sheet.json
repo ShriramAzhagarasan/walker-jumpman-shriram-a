@@ -141,6 +141,10 @@
           }
         }
       },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend: the overview types token by token, so mid-beat frames are mostly cream by design (EXECUTIVE-SUMMARY LAW)."
+      },
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B01.wav",
@@ -185,6 +189,29 @@
           }
         ],
         "note": "Failure: real hazard contact through normal input."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
       },
       "voice": "am_onyx",
       "engine": "kokoro",
@@ -236,6 +263,29 @@
           }
         ],
         "note": "Recovery, facing, pause/resume and manual retry."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
       },
       "voice": "am_onyx",
       "engine": "kokoro",
@@ -298,8 +348,8 @@
         "remotion": {
           "pattern": "ClaudeCodeBeat",
           "props": {
-            "title": "tuning.gd + first_steps.json (actual lines)",
-            "code": "# godot/features/player/tuning.gd\n@export var jump_velocity: float = -320.0\n@export var gravity: float = 960.0\n## Web-zip double jump: one extra jump in the air, needed to reach skyscraper roofs.\n@export var air_jumps: int = 1\n@export var air_jump_velocity: float = -320.0\n\n# godot/levels/first_steps.json  (x, top y, width, height)\n[512, 320, 224, 64],\n[576, 288, 48, 32],\n[784, 246, 80, 154],",
+            "title": "tuning.gd + first_steps.json (actual lines, excerpt)",
+            "code": "# godot/features/player/tuning.gd\n@export var jump_velocity: float = -320.0\n@export var gravity: float = 960.0\n@export var air_jumps: int = 1\n@export var air_jump_velocity: float = -320.0\n\n# levels/first_steps.json [x, top, w, h]\n[512, 320, 224, 64],\n[576, 288, 48, 32],\n[784, 246, 80, 154],",
             "sparkLine": "53 px jump. 74 px tower.",
             "language": "gdscript",
             "largeText": false,
@@ -307,7 +357,7 @@
           },
           "rendered": {
             "out": "media/B05.mp4",
-            "at": "2026-09-25T03:38:33.605860+00:00"
+            "at": "2026-09-25T04:07:49.311499+00:00"
           }
         }
       },
@@ -371,6 +421,29 @@
           "1208  jump pressed in the air (buffer window 6)  ->  1212 fires on landing"
         ]
       },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
+      },
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B06.wav",
@@ -413,6 +486,29 @@
           }
         ],
         "note": "Prediction confirmed in the engine: one ground jump cannot reach the first skyscraper."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
       },
       "voice": "am_onyx",
       "engine": "kokoro",
@@ -465,6 +561,29 @@
         ],
         "note": "New landing 1: Midtown glass tower via web-zip."
       },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
+      },
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B08.wav",
@@ -516,6 +635,29 @@
         ],
         "note": "New landings 2 and 3; relocated finish at x=2388."
       },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
+      },
       "voice": "am_onyx",
       "engine": "kokoro",
       "audio_file": "mp3/conformed/B09.wav",
@@ -566,6 +708,29 @@
           }
         ],
         "note": "Completion, replay by mouse, and return to the main menu."
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "game HUD title and controls",
+            "box": [
+              0.08,
+              0.06,
+              0.6,
+              0.21
+            ]
+          },
+          {
+            "label": "SCRIPTED-INPUT CAPTURE caption band",
+            "box": [
+              0.074,
+              0.905,
+              0.93,
+              0.955
+            ]
+          }
+        ],
+        "contrast_reason": "Real engine footage, reframed at 85 % inside title-safe. Essential text is the game HUD and the capture caption band; whole-frame average ink is dominated by sky/building art, not text. Pixels inspected in _qc/ frame samples."
       },
       "voice": "am_onyx",
       "engine": "kokoro",

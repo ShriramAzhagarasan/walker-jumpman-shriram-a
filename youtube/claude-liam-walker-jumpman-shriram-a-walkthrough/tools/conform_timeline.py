@@ -32,27 +32,35 @@ def dur(path):
 def font(name, size):
     return ImageFont.truetype(str(next(f for f in FONTS.rglob('*.ttf') if name in f.name)), size)
 
+# Gameplay is reframed at 85 % inside the title-safe box (never cropped, never
+# retimed); the label lives in a caption band under the footage, clear of gameplay.
+FRAME_W, FRAME_H, FRAME_X, FRAME_Y = 3264, 1836, 288, 116
+REFRAME = f"scale={FRAME_W}:{FRAME_H}:flags=lanczos,pad=3840:2160:{FRAME_X}:{FRAME_Y}:color=0x07080c"
+
 def label_png(path, build8, held):
     im = Image.new('RGBA', (3840, 2160), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    x0, y0, x1, y1 = 2760, 214, 3736, 356
-    d.rounded_rectangle((x0, y0, x1, y1), 22, fill=(6, 8, 16, 255), outline=(217, 119, 87, 255), width=4)
-    top = 'SCRIPTED-INPUT CAPTURE' + ('  ·  HELD FRAME' if held else '')
-    d.text((x0 + 30, y0 + 18), top, font=font('Lato-Bold', 46), fill=(255, 255, 255, 255))
-    d.text((x0 + 30, y0 + 78), f'real engine run · Godot 4.7.2 Movie Maker · build {build8}', font=font('Lato-Bold', 36), fill=(255, 255, 255, 255))
+    y = FRAME_Y + FRAME_H + 22
+    text = 'SCRIPTED-INPUT CAPTURE  ·  real engine run  ·  Godot 4.7.2 Movie Maker  ·  build ' + build8
+    d.text((FRAME_X, y), text, font=font('Lato-Bold', 52), fill=(255, 255, 255, 255))
+    if held:
+        tag = 'HELD FRAME  ·  final frame of the action'
+        f = font('Lato-Bold', 52)
+        w = d.textlength(tag, font=f)
+        d.rounded_rectangle((FRAME_X + FRAME_W - w - 40, y - 12, FRAME_X + FRAME_W, y + 70), 14, fill=(217, 119, 87, 255))
+        d.text((FRAME_X + FRAME_W - w - 20, y), tag, font=f, fill=(255, 255, 255, 255))
     im.save(path)
 
-def evidence_png(path, lines, base):
-    """Held-frame label plus a panel of input-log lines (bottom-left of the play area)."""
-    im = Image.open(base).convert('RGBA')
+def evidence_png(path, lines):
+    """Input-log panel in native capture coordinates; it is scaled with the footage."""
+    im = Image.new('RGBA', (3840, 2160), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    f_head, f_line = font('Lato-Bold', 40), font('PTMono-Regular', 34)
-    w, h = 1880, 80 + 60 * len(lines)
-    x0, y0 = 3840 - 110 - w, 1330   # right side: clear of the hero on this take
-    d.rounded_rectangle((x0, y0, x0 + w, y0 + h), 24, fill=(9, 14, 28, 238), outline=(217, 119, 87, 255), width=4)
+    f_head, f_line = font('Lato-Bold', 58), font('PTMono-Regular', 52)
+    w, h = 2330, 110 + 84 * (len(lines) - 1) + 40
+    x0, y0 = 3840 - 60 - w, 1180   # right side: clear of the hero on this take
+    d.rounded_rectangle((x0, y0, x0 + w, y0 + h), 26, fill=(6, 8, 16, 250), outline=(217, 119, 87, 255), width=5)
     for i, line in enumerate(lines):
-        d.text((x0 + 36, y0 + 30 + i * 60), line, font=f_head if i == 0 else f_line,
-               fill=(255, 214, 196, 255) if i == 0 else (236, 240, 248, 255))
+        d.text((x0 + 40, y0 + 30 + i * 84), line, font=f_head if i == 0 else f_line, fill=(255, 255, 255, 255))
     im.save(path)
 
 def main():
@@ -79,21 +87,23 @@ def main():
             frames = max(action_frames, math.ceil(need * FPS - 1e-9))
             hold = frames - action_frames
             live = R / f'_qc/labels/{bid}-live.mp4'
-            # Exact frame trim at native speed: select frames by index, reset timestamps.
+            # Exact frame trim at native speed, reframed inside title-safe, band label under it.
             sh('ffmpeg', '-v', 'error', '-y', '-i', CAPTURE, '-i', R / '_qc/labels/live.png',
-               '-filter_complex', f'[0:v]trim=start_frame={f0}:end_frame={f1},setpts=PTS-STARTPTS[g];[g][1:v]overlay=0:0,format=yuv420p[v]',
+               '-filter_complex', f'[0:v]trim=start_frame={f0}:end_frame={f1},setpts=PTS-STARTPTS,{REFRAME}[g];[g][1:v]overlay=0:0,format=yuv420p[v]',
                '-map', '[v]', '-r', FPS, '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', live)
             parts = [live]
             if hold:
                 last = R / f'_qc/labels/{bid}-last.png'
                 sh('ffmpeg', '-v', 'error', '-y', '-i', CAPTURE, '-vf', f'select=eq(n\\,{f1 - 1})', '-frames:v', '1', last)
-                held = R / f'_qc/labels/{bid}-held.mp4'
-                held_label = R / '_qc/labels/held.png'
+                inputs = ['-loop', '1', '-framerate', FPS, '-i', last, '-i', R / '_qc/labels/held.png']
+                graph = f'[0:v]{REFRAME}[g];[g][1:v]overlay=0:0,format=yuv420p[v]'
                 if shot.get('hold_overlay'):
-                    held_label = R / f'_qc/labels/{bid}-held-evidence.png'
-                    evidence_png(held_label, shot['hold_overlay'], R / '_qc/labels/held.png')
-                sh('ffmpeg', '-v', 'error', '-y', '-loop', '1', '-framerate', FPS, '-i', last, '-i', held_label,
-                   '-filter_complex', '[0:v][1:v]overlay=0:0,format=yuv420p[v]', '-map', '[v]', '-frames:v', hold,
+                    ev_png = R / f'_qc/labels/{bid}-evidence.png'
+                    evidence_png(ev_png, shot['hold_overlay'])
+                    inputs += ['-i', ev_png]
+                    graph = f'[0:v][2:v]overlay=0:0,{REFRAME}[g];[g][1:v]overlay=0:0,format=yuv420p[v]'
+                held = R / f'_qc/labels/{bid}-held.mp4'
+                sh('ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', graph, '-map', '[v]', '-frames:v', hold,
                    '-r', FPS, '-c:v', 'libx264', '-preset', 'medium', '-crf', '12', held)
                 parts.append(held)
             lst = R / f'_qc/labels/{bid}.txt'
