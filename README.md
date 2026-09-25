@@ -86,7 +86,7 @@ The justification and tests are in [CHANGE-BRIEF.md](CHANGE-BRIEF.md) (revision 
 
 - **File:** `claude-liam-walker-jumpman-shriram-a-walkthrough.mp4`: Brutalist godot-waikthrough, walker mode, 3840×2160, 30 fps, 3 min 57 s. Narrated by Liam (Kokoro), in for Bear.
 - **SHA-256:** `95d5bce41859a049246d39290566955ad2fa322d9066f48a19203c7930f710c4`
-- **Link:** [fill: course media storage URL]. The MP4 is not in GitHub.
+- **Link (Northeastern OneDrive):** [claude-liam-walker-jumpman-shriram-a-walkthrough.mp4](https://northeastern-my.sharepoint.com/:v:/g/personal/azhagarasan_s_northeastern_edu/IQAeSO04LvaESbmuwXkYTi0HAXkYAXgQbWnejsIEFEg9MSk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=KBxtKp). The MP4 is not in GitHub.
 - **Game revision shown:** commit `1cbbb850b988188bb2e28377dd897c2ff93d460b` · source snapshot `bb0f4ad453a25096bb04b84f1609338760328c0868e43e4dfbb8c09454cd61f7`
 - **Sources, evidence and QC:** `youtube/claude-liam-walker-jumpman-shriram-a-walkthrough/`. Gameplay is a scripted-input engine capture, labeled on screen, not a human playtest.
 
